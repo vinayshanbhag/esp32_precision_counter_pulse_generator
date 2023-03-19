@@ -21,13 +21,21 @@ rising edge of f_in to the first rising edge of f_in after the gate time.
 
  REFERENCE_SIGNAL_OUT (ESP32) >>---------------------------------->> PCNT_INPUT_SIG_IO0 (ESP32)                                                    
 ```
-The counter counts the pulses in f_in and an internal reference (10Mhz) during this time.
-The frequency of f_in is given by n_in/n_ref * f_ref where,
-n_in = number of pulses from input signal f_in during the gate time
-n_ref = number of pulses from reference signal during the gate time
-f_ref = internal reference frequency.
+The counter counts the pulses in $f_{in}$ and an internal reference (10Mhz) $f_{ref}$ during this time.
+The frequency of $f_{in}$ is given by 
 
-Compared to a direct counter, this method gives 8 digit resolution at all frequencies in 1s gate time. 
+$f_{in} = \frac{n_{in}}{n_{ref}} * f_{ref}$
+
+where,
+
+$n_{in}$ = number of pulses from input signal f_in during the gate time
+
+$n_{ref}$ = number of pulses from reference signal during the gate time
+
+$f_{ref}$ = internal reference frequency
+
+
+Compared to a direct counter, this method gives 8 digit resolution at all frequencies (less than the reference frequency) in 1s gate time. 
   
 Internal reference frequency of approximately 10Mhz is generated using ESP32 RMT.      
 Exact value of this frequency must be measured with a calibrated meter and entered in reference variable.
