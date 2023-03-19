@@ -2,7 +2,7 @@
 
 ### Overview
 
-A frequency counter with 8-digit precision over the the entire range (5Hz-10Mhz) for a 1s gate time. A variable duty cycle pulse generator (5Hz-5Mhz) using esp32 RMT.
+A frequency counter with 8-digit precision over the entire range (5Hz-10Mhz) for a 1s gate time. A variable duty cycle pulse generator (5Hz-5Mhz) using esp32 RMT.
 
 ### Theory of operation
 
