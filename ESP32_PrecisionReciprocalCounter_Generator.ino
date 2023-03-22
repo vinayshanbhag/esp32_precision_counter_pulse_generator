@@ -686,6 +686,10 @@ void IRAM_ATTR pcnt_intr_handler(void* arg)
 /* Initialize a counter 
 */
 static void init_counter(pcnt_unit_t unit, pcnt_channel_t channel, gpio_num_t signal_in, gpio_num_t control_in, void (*handler)(void *)){
+  gpio_pad_select_gpio(signal_in);                              
+  gpio_set_direction(signal_in, GPIO_MODE_INPUT);
+  gpio_pad_select_gpio(control_in);                              
+  gpio_set_direction(control_in, GPIO_MODE_INPUT);  
   pcnt_config_t pcnt_config = {};
   pcnt_config.pulse_gpio_num = signal_in;
   pcnt_config.ctrl_gpio_num = control_in;
