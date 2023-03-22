@@ -53,9 +53,11 @@ Rotary encoder controls the output frequency in discrete steps. Initial duty cyc
 Pressing the rotary encoder, cycles through duty cycles from 10-90 in steps of 10. Duty cycle may remain 
 at 50% if underlying RMT parameters do not allow changing the duty cycle reliably.
 
-1602 LCD displays both input frequency and signal generator output
-input frequency is displayed on line 1
-signal generator output and duty cycle are displayed on line 2
+1602 LCD displays both input frequency and signal generator output.
+
+Input frequency is displayed on line 1
+
+Signal generator output and duty cycle are displayed on line 2
 
 ### 
 
