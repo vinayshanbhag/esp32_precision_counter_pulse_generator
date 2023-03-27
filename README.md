@@ -66,9 +66,9 @@ $\frac{counter_{1}}{counter_{0}}*f_{ref} = \frac{5}{10001339}*10001305.4 = 4.999
 
 where,
 
-$counter_{0}$, are the input signal pulses counted by a PCNT counter 
+$counter_{1}$, are the input signal pulses counted by a PCNT counter 
 
-$counter_{1}$, are the reference clock pulses counted by another PCNT counter in the same gating period
+$counter_{0}$, are the reference clock pulses counted by another PCNT counter in the same gating period
 
 $f_{ref}$, is the reference clock frequency measured on an external calibrated meter 
 
