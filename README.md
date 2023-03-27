@@ -49,15 +49,31 @@ The counters are 16bit hence cannot go beyond 32767. noverflow0 and noverflow1, 
 The total count for a counter is given by noverflow*PCNT_H_LIM_VAL + count. 
 PCNT_H_LIM_VAL is set to 20000(doesn't seem to work well at higher values)
 
-Rotary encoder controls the output frequency in discrete steps. Initial duty cycle is set to 50%. 
-Pressing the rotary encoder, cycles through duty cycles from 10-90 in steps of 10. Duty cycle may remain 
-at 50% if underlying RMT parameters do not allow changing the duty cycle reliably.
 
-1602 LCD displays both input frequency and signal generator output.
+![Timing](/timing.png)
 
-Input frequency is displayed on line 1
+Synchronizing the gating signal with input, significantly reduces measurement error. 
 
-Signal generator output and duty cycle are displayed on line 2
+In the example above,
+
+the measured frequency without a synchronized gate is 
+
+$\frac{counter_{1}}{counter_{0}}*f_{ref} = \frac{5}{10004615}*10001305.4 = 4.9983459Hz$
+
+the measured frequency with a synchronized gate is 
+
+$\frac{counter_{1}}{counter_{0}}*f_{ref} = \frac{5}{10001339}*10001305.4 = 4.9999832Hz$
+
+where,
+
+$counter_{0}$, are the input signal pulses counted by a PCNT counter 
+
+$counter_{1}$, are the reference clock pulses counted by another PCNT counter in the same gating period
+
+$f_{ref}$, is the reference clock frequency measured on an external calibrated meter 
+
+
+The actual input frequency in this example, as measured on a calibrated meter is $4.9999823Hz$
 
 ### 
 
